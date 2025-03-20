@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  })();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugFinder - Home</title>
+  <link rel="stylesheet" href="BugFinderstyle.css">
+</head>
+<body>
+  <!-- Mobile Header (visible on screens under 768px) -->
+  <div class="mobile-header">
+    <span class="hamburger">&#9776;</span>
+    <h1>BugFinder</h1>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>BugFinder</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="BugFinderindex.html" class="active">
+            <img src="images/home.png" alt="Home logo" class="sidebar-nav-logo">Home
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderreport.html">
+            <img src="images/bug.png" alt="Bug logo" class="sidebar-nav-logo">Report a Bug
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderdashboard.html">
+            <img src="images/dev.svg" alt="Dev logo" class="sidebar-nav-logo">Developer Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderbrowse.html">
+            <img src="images/browse.png" alt="Browse logo" class="sidebar-nav-logo">Browse Bugs
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderlogin.html">
+            <img src="images/login.png" alt="Login logo" class="sidebar-nav-logo">Login/Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Dark/Light mode toggle button will be injected via JS -->
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Find, Report, and Fix Bugs Faster</h2>
+        <p>Join our community to report bugs, track status, and improve software experiences for everyone.</p>
+        <a href="BugFinderreport.html" class="btn">Report a Bug</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features container">
+      <h2>How BugFinder Works</h2>
+      <div class="feature-cards">
+        <div class="card">
+          <h3>Easy Bug Reporting</h3>
+          <p>Quickly report bugs in your favorite apps and websites with a user-friendly interface.</p>
+        </div>
+        <div class="card">
+          <h3>Prioritized Issues</h3>
+          <p>See which bugs are most common and affecting users the most, so developers can prioritize fixes.</p>
+        </div>
+        <div class="card">
+          <h3>Community Engagement</h3>
+          <p>Connect with other users and developers, discuss issues, and track the status of bug fixes.</p>
+        </div>
+        <div class="card">
+          <h3>Developer Tools 
+          </h3>
+          <p>Integrate with tools like GitHub, Jira, and Slack, and access a private dashboard for updates.</p>
+          <div class="dev-tools-logos">
+            <a href="https://github.com" target="_blank">
+              <img src="images/github.svg" alt="GitHub logo" class="dev-logo">
+          </a>
+          <a href="https://www.atlassian.com/software/jira" target="_blank">
+              <span style="display: inline-block; vertical-align: middle;">
+                  <img src="images/Jira.svg.png" alt="Jira logo" class="dev-logo">
+              </span>
+          </a>
+          <a href="https://slack.com" target="_blank">
+              <img src="images/slack.png" alt="Slack logo" class="dev-logo">
+          </a>
+          </div>
+        </div>
+    </section>
+
+    <!-- Recent Bugs Section -->
+    <section class="recent-bugs container">
+      <h2>Recent Bug Reports</h2>
+      <ul>
+        <li><a href="BugFinderbug.html?id=1">Chilis - App crashes when clicking on "Submit Order"</a></li>
+        <li><a href="BugFinderbug.html?id=2">Instagram - UI glitch on login screen for mobile users</a></li>
+        <li><a href="BugFinderbug.html?id=3">Amazon - Slow response time on payment gateway</a></li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BugFinder. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="BugFinderscript.js"></script>
+</body>
+</html>

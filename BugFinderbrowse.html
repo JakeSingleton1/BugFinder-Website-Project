@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  })();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugFinder - Browse Bug Reports</title>
+  <link rel="stylesheet" href="BugFinderstyle.css">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="hamburger">&#9776;</span>
+    <h1>BugFinder</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>BugFinder</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="BugFinderindex.html">
+            <img src="images/home.png" alt="Home logo" class="sidebar-nav-logo">Home
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderreport.html">
+            <img src="images/bug.png" alt="Bug logo" class="sidebar-nav-logo">Report a Bug
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderdashboard.html">
+            <img src="images/dev.svg" alt="Dev logo" class="sidebar-nav-logo">Developer Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderbrowse.html" class="active">
+            <img src="images/browse.png" alt="Browse logo" class="sidebar-nav-logo">Browse Bugs
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderlogin.html">
+            <img src="images/login.png" alt="Login logo" class="sidebar-nav-logo">Login/Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2>Browse Bug Reports</h2>
+      <p>View bug reports across popular apps and websites. Upvote issues to help prioritize fixes!</p>
+
+      <!-- Filter Navigation -->
+      <div class="filter-nav">
+        <ul>
+          <li><a href="#" class="filter-link active" data-category="all">All</a></li>
+          <li><a href="#" class="filter-link" data-category="Instagram">Instagram</a></li>
+          <li><a href="#" class="filter-link" data-category="Facebook">Facebook</a></li>
+          <li><a href="#" class="filter-link" data-category="Discord">Discord</a></li>
+          <li><a href="#" class="filter-link" data-category="TikTok">TikTok</a></li>
+          <li><a href="#" class="filter-link" data-category="Other">Other</a></li>
+        </ul>
+      </div>
+
+      <table id="bugBrowseTable">
+        <thead>
+          <tr>
+            <th>App/Website</th>
+            <th>Bug Title</th>
+            <th>Description</th>
+            <th>Votes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-category="Instagram">
+            <td>Instagram</td>
+            <td>Story Crashes</td>
+            <td>Stories sometimes crash when swiping quickly.</td>
+            <td><span class="vote-count">12</span></td>
+            <td><button class="btn upvote-button">Upvote</button></td>
+          </tr>
+          <tr data-category="Facebook">
+            <td>Facebook</td>
+            <td>News Feed Not Updating</td>
+            <td>The news feed sometimes doesn't show the latest posts.</td>
+            <td><span class="vote-count">8</span></td>
+            <td><button class="btn upvote-button">Upvote</button></td>
+          </tr>
+          <tr data-category="Discord">
+            <td>Discord</td>
+            <td>Voice Chat Lag</td>
+            <td>Users experience lag and disconnections during group calls.</td>
+            <td><span class="vote-count">15</span></td>
+            <td><button class="btn upvote-button">Upvote</button></td>
+          </tr>
+          <tr data-category="TikTok">
+            <td>TikTok</td>
+            <td>Video Playback Freeze</td>
+            <td>Some videos freeze after a few seconds of playback.</td>
+            <td><span class="vote-count">20</span></td>
+            <td><button class="btn upvote-button">Upvote</button></td>
+          </tr>
+          <tr data-category="Other">
+            <td>Other</td>
+            <td>iOS - UI Glitch on Mobile</td>
+            <td>The interface overlaps on smaller screens.</td>
+            <td><span class="vote-count">5</span></td>
+            <td><button class="btn upvote-button">Upvote</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BugFinder. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="BugFinderscript.js"></script>
+</body>
+</html>

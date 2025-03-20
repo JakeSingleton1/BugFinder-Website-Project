@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  })();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugFinder - Report a Bug</title>
+  <link rel="stylesheet" href="BugFinderstyle.css">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="hamburger">&#9776;</span>
+    <h1>BugFinder</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>BugFinder</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="BugFinderindex.html">
+            <img src="images/home.png" alt="Home logo" class="sidebar-nav-logo">Home
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderreport.html" class="active">
+            <img src="images/bug.png" alt="Bug logo" class="sidebar-nav-logo">Report a Bug
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderdashboard.html">
+            <img src="images/dev.svg" alt="Dev logo" class="sidebar-nav-logo">Developer Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderbrowse.html">
+            <img src="images/browse.png" alt="Browse logo" class="sidebar-nav-logo">Browse Bugs
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderlogin.html">
+            <img src="images/login.png" alt="Login logo" class="sidebar-nav-logo">Login/Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2>Report a Bug</h2>
+      <p>Fill out the form below to report an issue you’ve encountered.</p>
+      <form id="bugReportForm">
+        <div class="form-group">
+          <label for="appName">Application/Website Name:</label>
+          <input type="text" id="appName" name="appName" required>
+        </div>
+        <div class="form-group">
+          <label for="bugTitle">Bug Title:</label>
+          <input type="text" id="bugTitle" name="bugTitle" required>
+        </div>
+        <div class="form-group">
+          <label for="bugDescription">Description:</label>
+          <textarea id="bugDescription" name="bugDescription" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="stepsToReproduce">Steps to Reproduce:</label>
+          <textarea id="stepsToReproduce" name="stepsToReproduce" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="severity">Severity:</label>
+          <select id="severity" name="severity">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="critical">Critical</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="screenshot">Screenshot (optional):</label>
+          <input type="file" id="screenshot" name="screenshot" accept="image/*">
+        </div>
+        <button type="submit" class="btn">Submit Bug Report</button>
+      </form>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BugFinder. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="BugFinderscript.js"></script>
+</body>
+</html>

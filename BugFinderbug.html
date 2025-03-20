@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  })();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugFinder - Bug Details</title>
+  <link rel="stylesheet" href="BugFinderstyle.css">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="hamburger">&#9776;</span>
+    <h1>BugFinder</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>BugFinder</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="BugFinderindex.html">
+            <img src="images/home.png" alt="Home logo" class="sidebar-nav-logo">Home
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderreport.html">
+            <img src="images/bug.png" alt="Bug logo" class="sidebar-nav-logo">Report a Bug
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderdashboard.html">
+            <img src="images/dev.svg" alt="Dev logo" class="sidebar-nav-logo">Developer Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderbrowse.html">
+            <img src="images/browse.png" alt="Browse logo" class="sidebar-nav-logo">Browse Bugs
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderlogin.html">
+            <img src="images/login.png" alt="Login logo" class="sidebar-nav-logo">Login/Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2>Bug Report Details</h2>
+      <div id="bugDetails">
+        <h3>Bug Title: App crashes when clicking on "Submit Order"</h3>
+        <p><strong>Application:</strong> Mobile Ordering App</p>
+        <p><strong>Description:</strong> The app unexpectedly crashes when the user clicks on the "Submit Order" button during peak hours.</p>
+        <p><strong>Steps to Reproduce:</strong></p>
+        <ol>
+          <li>Open the Mobile Ordering App</li>
+          <li>Add items to the cart</li>
+          <li>Proceed to checkout</li>
+          <li>Click on "Submit Order"</li>
+        </ol>
+        <p><strong>Severity:</strong> High</p>
+        <p><strong>Status:</strong> Under Investigation</p>
+      </div>
+      
+      <section class="comments">
+        <h3>Comments</h3>
+        <ul>
+          <li><strong>User123:</strong> I experienced this issue too.</li>
+          <li><strong>DevTeam:</strong> We're looking into this and will update soon.</li>
+        </ul>
+        <form id="commentForm">
+          <textarea id="commentText" placeholder="Add your comment here..." rows="3"></textarea>
+          <button type="submit" class="btn">Post Comment</button>
+        </form>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BugFinder. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="BugFinderscript.js"></script>
+</body>
+</html>

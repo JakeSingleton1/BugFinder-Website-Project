@@ -1,0 +1,542 @@
+/* BugFinderstyle.css */
+
+/* 
+   CSS Variables for Light & Dark Mode 
+*/
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f1f1f;
+  --card-bg: #f9f9f9;
+  --border-color: #e0e0e0;
+  --primary-color: #3f8efc;
+  --secondary-color: #2c2c2c;
+  --nav-bg: #f2f2f2;
+  --nav-text: #000000;
+  --button-text: #ffffff;
+}
+
+.dark-mode {
+  --bg-color: #1f1f1f;
+  --text-color: #f5f5f5;
+  --card-bg: #2c2c2c;
+  --border-color: #3a3a3a;
+  --primary-color: #3f8efc;
+  --secondary-color: #2c2c2c;
+  --nav-bg: #2c2c2c;
+  --nav-text: #ffffff;
+  --button-text: #ffffff;
+}
+
+/* Global Reset & Body */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+               Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* ------------------------------- */
+/* Mobile Header (visible on mobile) */
+.mobile-header {
+  display: none;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.mobile-header .hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ------------------------------- */
+/* Sidebar Layout & Navigation     */
+/* ------------------------------- */
+.sidebar {
+  width: 240px;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;    /* Stack items vertically */
+  align-items: flex-start;
+  transition: left 0.3s ease;
+}
+
+.sidebar-header {
+  margin-bottom: 1rem;
+}
+
+.sidebar-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  width: 100%;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav li a {
+  text-decoration: none;
+  color: var(--nav-text);
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+}
+
+.sidebar-nav-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Dark/Light Mode Toggle Button (injected via JS) */
+.mode-toggle {
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ------------------------------- */
+/* Main Content Area               */
+/* ------------------------------- */
+.main-content {
+  margin-left: 240px;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ------------------------------- */
+/* Hero Section                    */
+/* ------------------------------- */
+.hero {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero .btn {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero .btn:hover {
+  opacity: 0.9;
+}
+
+/* ------------------------------- */
+/* Section Titles & Features       */
+/* ------------------------------- */
+.container h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 calc(50% - 1rem);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ------------------------------- */
+/* Recent Bugs List                */
+/* ------------------------------- */
+.recent-bugs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-bugs li {
+  background-color: var(--card-bg);
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.recent-bugs li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.recent-bugs li a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------- */
+/* Filter Navigation (Browse Page) */
+/* ------------------------------- */
+.filter-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-nav ul li a.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* ------------------------------- */
+/* Tables (Dashboard, Browse, etc.)*/
+/* ------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+th {
+  font-weight: 600;
+}
+
+.update-status,
+.upvote-button {
+  background: var(--primary-color);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.update-status:hover,
+.upvote-button:hover {
+  opacity: 0.9;
+}
+
+/* ------------------------------- */
+/* Forms (Report, Login, etc.)     */
+/* ------------------------------- */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button.btn,
+input[type="submit"].btn {
+  background: var(--primary-color);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button.btn:hover,
+input[type="submit"].btn:hover {
+  opacity: 0.9;
+}
+
+/* ------------------------------- */
+/* Login/Register Styles */
+.login-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+
+.login-form,
+.register-form {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  width: 45%;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.login-form h3,
+.register-form h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* ------------------------------- */
+/* Comments Section (Bug Details)  */
+/* ------------------------------- */
+.comments {
+  margin-top: 2rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.comments h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.comments ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.comments ul li {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.comments ul li strong {
+  color: var(--text-color);
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#commentText {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.6rem;
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ------------------------------- */
+/* Footer                          */
+/* ------------------------------- */
+footer {
+  margin-top: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ------------------------------- */
+/* Responsive Design Enhancements  */
+/* ------------------------------- */
+@media (max-width: 1200px) {
+  body {
+    font-size: 1rem;
+  }
+  .sidebar {
+    width: 250px;
+  }
+  .main-content {
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.8rem;
+  }
+  /* Show mobile header and hide sidebar off-canvas */
+  .mobile-header {
+    display: flex;
+  }
+  .sidebar {
+    position: fixed;
+    width: 240px;
+    left: -240px;  /* Hide off-canvas initially */
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  .sidebar.active {
+    left: 0;
+  }
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px; /* space for mobile header */
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.7rem;
+  }
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.dev-tools-logos {
+  display: flex;
+  gap: 1rem;          /* space between each logo */
+  margin-top: 0.75rem;
+  justify-content: center; /* center them horizontally in the card */
+}
+
+.dev-logo {
+  width: 40px;        /* adjust as needed */
+  height: auto;       /* keep aspect ratio */
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}

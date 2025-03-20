@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function() {
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.documentElement.classList.add("dark-mode");
+    } else {
+      document.documentElement.classList.remove("dark-mode");
+    }
+  })();
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugFinder - Developer Dashboard</title>
+  <link rel="stylesheet" href="BugFinderstyle.css">
+</head>
+<body>
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="hamburger">&#9776;</span>
+    <h1>BugFinder</h1>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>BugFinder</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="BugFinderindex.html">
+            <img src="images/home.png" alt="Home logo" class="sidebar-nav-logo">Home
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderreport.html">
+            <img src="images/bug.png" alt="Bug logo" class="sidebar-nav-logo">Report a Bug
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderdashboard.html" class="active">
+            <img src="images/dev.svg" alt="Dev logo" class="sidebar-nav-logo">Developer Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderbrowse.html">
+            <img src="images/browse.png" alt="Browse logo" class="sidebar-nav-logo">Browse Bugs
+          </a>
+        </li>
+        <li>
+          <a href="BugFinderlogin.html">
+            <img src="images/login.png" alt="Login logo" class="sidebar-nav-logo">Login/Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h2>Developer Dashboard</h2>
+      <p>Welcome, Developer! Here you can view and manage bug reports related to your products.</p>
+      
+      <table id="bugTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Bug Title</th>
+            <th>Application</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>App crashes on submit</td>
+            <td>Mobile Ordering App</td>
+            <td>High</td>
+            <td>Under Investigation</td>
+            <td><button class="btn update-status">Update Status</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Login UI glitch</td>
+            <td>Authentication Module</td>
+            <td>Medium</td>
+            <td>Open</td>
+            <td><button class="btn update-status">Update Status</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 BugFinder. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="BugFinderscript.js"></script>
+</body>
+</html>
